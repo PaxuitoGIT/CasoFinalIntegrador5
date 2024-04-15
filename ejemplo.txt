@@ -1,0 +1,5 @@
+agua
+cabeza
+cuerpo
+gen
+hierro

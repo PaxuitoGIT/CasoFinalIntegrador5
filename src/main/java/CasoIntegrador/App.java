@@ -2,6 +2,7 @@ package CasoIntegrador;
 
 import CasoIntegrador.AnalisisGenomico.CalculoCombinacionGenetica;
 import CasoIntegrador.AnalisisGenomico.ConteoGenes;
+import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
 import CasoIntegrador.HerramientasAnalisisNumerico.SumatorioListadoNumero;
 
@@ -14,6 +15,7 @@ public class App {
         CalculoCombinacionGenetica calculoCombinacionGenetica = new CalculoCombinacionGenetica();
         SumatorioListadoNumero sumatorioListadoNumero = new SumatorioListadoNumero();
         PotenciasYMaximos potenciasYMaximos = new PotenciasYMaximos();
+        OrganizacionDocumentos organizacionDocumentos = new OrganizacionDocumentos();
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
 
@@ -36,6 +38,9 @@ public class App {
                 int[] lista = {1, 5, 25, 10, 4};
                 int maximo = potenciasYMaximos.calcularMaximo(lista, lista.length);
                 System.out.println("Máximo: " + maximo);
+                break;
+            case 5:
+                organizacionDocumentos.organizarDocumentos("ejemplo.txt");
                 break;
             default:
                 System.out.println("Opción no válida");
