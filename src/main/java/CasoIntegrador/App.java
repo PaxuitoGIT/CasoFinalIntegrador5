@@ -2,6 +2,7 @@ package CasoIntegrador;
 
 import CasoIntegrador.AnalisisGenomico.CalculoCombinacionGenetica;
 import CasoIntegrador.AnalisisGenomico.ConteoGenes;
+import CasoIntegrador.GestionInformacionCientifica.BusquedaBinariaTexto;
 import CasoIntegrador.GestionInformacionCientifica.BusquedaLinealTexto;
 import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
@@ -18,6 +19,7 @@ public class App {
         PotenciasYMaximos potenciasYMaximos = new PotenciasYMaximos();
         OrganizacionDocumentos organizacionDocumentos = new OrganizacionDocumentos();
         BusquedaLinealTexto busquedaLinealTexto = new BusquedaLinealTexto("ejemplo.txt");
+        BusquedaBinariaTexto busquedaBinariaTexto = new BusquedaBinariaTexto("ejemplo.txt");
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
 
@@ -47,6 +49,10 @@ public class App {
             case 6:
                 boolean encontrado = busquedaLinealTexto.busquedaLineal("zapato");
                 System.out.println("Encontrado: " + encontrado);
+                break;
+            case 7:
+                boolean encontradoBinario = busquedaBinariaTexto.busquedaBinaria("zapato");
+                System.out.println("Encontrado: " + encontradoBinario);
                 break;
             default:
                 System.out.println("Opción no válida");
