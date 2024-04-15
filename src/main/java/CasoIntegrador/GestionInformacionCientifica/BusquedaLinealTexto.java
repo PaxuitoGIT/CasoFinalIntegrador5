@@ -3,23 +3,20 @@ package CasoIntegrador.GestionInformacionCientifica;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BusquedaLinealTexto {
 
-    public List<String> palabras;
+    List <String> palabras;
 
     public BusquedaLinealTexto(String rutaArchivo) {
-        palabras = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(rutaArchivo);
-            BufferedReader br = new BufferedReader(fr);
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                palabras.add(linea);
-            }
-            br.close();
+            String contenido = new String(Files.readAllBytes(Paths.get(rutaArchivo)));
+            palabras = Arrays.asList(contenido.split("\\s+"));
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
