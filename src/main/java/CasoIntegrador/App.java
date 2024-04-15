@@ -4,10 +4,14 @@ import CasoIntegrador.AnalisisGenomico.CalculoCombinacionGenetica;
 import CasoIntegrador.AnalisisGenomico.ConteoGenes;
 import CasoIntegrador.GestionInformacionCientifica.BusquedaBinariaTexto;
 import CasoIntegrador.GestionInformacionCientifica.BusquedaLinealTexto;
+import CasoIntegrador.GestionInformacionCientifica.GestionFechas;
 import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
 import CasoIntegrador.HerramientasAnalisisNumerico.SumatorioListadoNumero;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class App {
@@ -20,6 +24,7 @@ public class App {
         OrganizacionDocumentos organizacionDocumentos = new OrganizacionDocumentos();
         BusquedaLinealTexto busquedaLinealTexto = new BusquedaLinealTexto("ejemplo.txt");
         BusquedaBinariaTexto busquedaBinariaTexto = new BusquedaBinariaTexto("ejemplo.txt");
+        GestionFechas gestionFechas = new GestionFechas();
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
 
@@ -54,6 +59,34 @@ public class App {
                 boolean encontradoBinario = busquedaBinariaTexto.busquedaBinaria("zapato");
                 System.out.println("Encontrado: " + encontradoBinario);
                 break;
+            case 8:
+                while (true) {
+                    System.out.println("1. Añadir fecha");
+                    System.out.println("2. Ordenar fechas");
+                    System.out.println("3. Exit");
+                    int option = scanner.nextInt();
+
+                    switch (option) {
+                        case 1:
+                            System.out.println("Introduce una fecha dd/mm/yyyy:");
+                            String dateString = scanner.next();
+                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                            try {
+                                LocalDate date = LocalDate.parse(dateString, formatter);
+                                gestionFechas.agregarFecha(date);
+                            } catch (DateTimeParseException e) {
+                                System.out.println("Fecha no válida");
+                            }
+                            break;
+                        case 2:
+                            gestionFechas.listarFechas();
+                            break;
+                        case 3:
+                            return;
+                        default:
+                            System.out.println("Opción no válida");
+                    }
+                }
             default:
                 System.out.println("Opción no válida");
         }
