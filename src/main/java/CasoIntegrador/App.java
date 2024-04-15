@@ -2,6 +2,7 @@ package CasoIntegrador;
 
 import CasoIntegrador.AnalisisGenomico.CalculoCombinacionGenetica;
 import CasoIntegrador.AnalisisGenomico.ConteoGenes;
+import CasoIntegrador.GestionInformacionCientifica.BusquedaLinealTexto;
 import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
 import CasoIntegrador.HerramientasAnalisisNumerico.SumatorioListadoNumero;
@@ -16,6 +17,7 @@ public class App {
         SumatorioListadoNumero sumatorioListadoNumero = new SumatorioListadoNumero();
         PotenciasYMaximos potenciasYMaximos = new PotenciasYMaximos();
         OrganizacionDocumentos organizacionDocumentos = new OrganizacionDocumentos();
+        BusquedaLinealTexto busquedaLinealTexto = new BusquedaLinealTexto("ejemplo.txt");
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
 
@@ -41,6 +43,10 @@ public class App {
                 break;
             case 5:
                 organizacionDocumentos.organizarDocumentos("ejemplo.txt");
+                break;
+            case 6:
+                boolean encontrado = busquedaLinealTexto.busquedaLineal("zapato");
+                System.out.println("Encontrado: " + encontrado);
                 break;
             default:
                 System.out.println("Opción no válida");
