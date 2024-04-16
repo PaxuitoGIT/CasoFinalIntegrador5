@@ -8,6 +8,7 @@ import CasoIntegrador.GestionInformacionCientifica.GestionFechas;
 import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
 import CasoIntegrador.HerramientasAnalisisNumerico.SumatorioListadoNumero;
+import CasoIntegrador.OptimizacionQuick.Quicksort;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -87,6 +88,13 @@ public class App {
                             System.out.println("Opción no válida");
                     }
                 }
+            case 9:
+                int[] arr = {10,14,26,8,53,87,12,50};
+                Quicksort.quickSort(arr, 0, arr.length - 1);
+                for (int num : arr) {
+                    System.out.print(num + " ");
+                }
+                break;
             default:
                 System.out.println("Opción no válida");
         }
