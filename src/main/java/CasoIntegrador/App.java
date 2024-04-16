@@ -51,33 +51,33 @@ public class App {
 
                 switch (opcion) {
                     case 1: // Conteo de genes
-                        int count = conteoGenes.contarGenes("ATGTAAGATGCATTGATG", 0);
+                        int count = conteoGenes.contarGenes("ATGTAAGATGCATTGATG", 0); // Se inicia el conteo de genes
                         System.out.println("Número de genes: " + count);
                         break;
                     case 2: // Cálculo de combinación genética
-                        calculoCombinacionGenetica.calcularCombinacionGenetica(3, "");
+                        calculoCombinacionGenetica.calcularCombinacionGenetica(3, ""); // Se calcula la combinación genética
                         break;
                     case 3: // Sumatorio y listado de números
-                        int sumatorio = sumatorioListadoNumero.calcularSumatorio(10);
+                        int sumatorio = sumatorioListadoNumero.calcularSumatorio(10); // Se calcula el sumatorio
                         System.out.println("Sumatorio: " + sumatorio);
-                        sumatorioListadoNumero.calcularListado(1, 10);
+                        sumatorioListadoNumero.calcularListado(1, 10); // Se calcula el listado de números
                         break;
                     case 4: // Potencias y máximo de una lista de números
-                        int potencia = potenciasYMaximos.calcularPotencia(2, 3);
+                        int potencia = potenciasYMaximos.calcularPotencia(2, 3); // Se calcula la potencia
                         System.out.println("Potencia: " + potencia);
                         int[] lista = {1, 5, 25, 10, 4};
-                        int maximo = potenciasYMaximos.calcularMaximo(lista, lista.length);
+                        int maximo = potenciasYMaximos.calcularMaximo(lista, lista.length); // Se calcula el máximo de la lista
                         System.out.println("Máximo: " + maximo);
                         break;
                     case 5: // Organización de documentos
-                        organizacionDocumentos.organizarDocumentos("ejemplo.txt");
+                        organizacionDocumentos.organizarDocumentos("ejemplo.txt"); // Se organiza el documento del ejemplo.txt que está en el directorio del proyecto
                         break;
                     case 6: // Búsqueda lineal de texto
-                        boolean encontrado = busquedaLinealTexto.busquedaLineal("zapato");
+                        boolean encontrado = busquedaLinealTexto.busquedaLineal("zapato"); // Se busca la palabra de forma lineal "zapato" en el archivo ejemplo.txt
                         System.out.println("Encontrado: " + encontrado);
                         break;
                     case 7: // Búsqueda binaria de texto
-                        boolean encontradoBinario = busquedaBinariaTexto.busquedaBinaria("zapato");
+                        boolean encontradoBinario = busquedaBinariaTexto.busquedaBinaria("zapato"); // Se busca la palabra de forma binaria "zapato" en el archivo ejemplo.txt
                         System.out.println("Encontrado: " + encontradoBinario);
                         break;
                     case 8: // Gestion de fechas
@@ -91,7 +91,7 @@ public class App {
                                 case 1: // Añadir fecha
                                     System.out.println("Introduce una fecha dd/mm/yyyy:");
                                     String dateString = scanner.next();
-                                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Formato de fecha
                                     try {
                                         LocalDate date = LocalDate.parse(dateString, formatter);
                                         gestionFechas.agregarFecha(date);
@@ -110,7 +110,7 @@ public class App {
                         }
                     case 9: // Optimización QuickSort
                         int[] arr = {10, 14, 26, 8, 53, 87, 12, 50};
-                        Quicksort.quickSort(arr, 0, arr.length - 1);
+                        Quicksort.quickSort(arr, 0, arr.length - 1); // Se ordena el arreglo con el algoritmo QuickSort
                         for (int num : arr) {
                             System.out.print(num + " ");
                         }
