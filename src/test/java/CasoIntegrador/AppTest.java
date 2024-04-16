@@ -4,10 +4,8 @@ import CasoIntegrador.AnalisisGenomico.CalculoCombinacionGenetica;
 import CasoIntegrador.AnalisisGenomico.ConteoGenes;
 import CasoIntegrador.GestionInformacionCientifica.BusquedaBinariaTexto;
 import CasoIntegrador.GestionInformacionCientifica.BusquedaLinealTexto;
-import CasoIntegrador.GestionInformacionCientifica.OrganizacionDocumentos;
 import CasoIntegrador.HerramientasAnalisisNumerico.PotenciasYMaximos;
 import CasoIntegrador.HerramientasAnalisisNumerico.SumatorioListadoNumero;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
