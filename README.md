@@ -39,7 +39,7 @@ puede estar en la primera mitad o en la otra y hace lo mismo de partir en 2 hast
 "aire", "fuego", "tierra", "viento"] y quiero buscar la palabra "aire", lo que va a hacer es comparar "fuego" con "aire". Como la lista está ordenada y la "a" va antes que la "f",
 sabemos que está en la primera mitad y así hasta que coincidan.
 
-Para la gestión de fechas, es introducir las fechas y ordenarlas de forma cronólogica con el método del TreeSet<LocalDate>
+Para la gestión de fechas, es introducir las fechas y ordenarlas de forma cronológica con el método del TreeSet<LocalDate>
 
 ### Optimización de Procesos (Ejercicio 13):
 
